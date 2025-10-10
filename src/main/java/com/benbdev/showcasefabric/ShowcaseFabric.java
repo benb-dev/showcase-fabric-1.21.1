@@ -1,5 +1,6 @@
 package com.benbdev.showcasefabric;
 
+import com.benbdev.showcasefabric.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +12,6 @@ public class ShowcaseFabric implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+        ModItems.registerModItems();
 	}
 }
