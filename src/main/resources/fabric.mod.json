@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "showcase-fabric",
+	"version": "${version}",
+	"name": "Showcase Fabric",
+	"description": "A showcase of some of the capabilities of the Fabric modding API for Minecraft 1.21.1.",
+	"authors": [
+		"Dejiek"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/showcase-fabric/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.benbdev.showcasefabric.ShowcaseFabric"
+		],
+		"fabric-datagen": [
+			"com.benbdev.showcasefabric.ShowcaseFabricDataGenerator"
+		],
+        "client": [
+          "com.benbdev.showcasefabric.ShowcaseFabricClient"
+        ]
+	},
+	"mixins": [
+		"showcase-fabric.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
