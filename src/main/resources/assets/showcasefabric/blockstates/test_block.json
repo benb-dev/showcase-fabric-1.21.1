@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "showcasefabric:block/test_block"
+    }
+  }
+}

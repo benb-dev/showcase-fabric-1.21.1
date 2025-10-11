@@ -1,5 +1,6 @@
 package com.benbdev.showcasefabric;
 
+import com.benbdev.showcasefabric.block.ModBlocks;
 import com.benbdev.showcasefabric.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,5 +14,6 @@ public class ShowcaseFabric implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
 	}
 }
