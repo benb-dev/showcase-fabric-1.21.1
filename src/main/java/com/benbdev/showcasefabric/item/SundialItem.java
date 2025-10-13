@@ -1,6 +1,7 @@
 package com.benbdev.showcasefabric.item;
 
 import com.benbdev.showcasefabric.AdvanceTimeC2SPayload;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,18 +18,12 @@ public class SundialItem extends Item {
         super(settings);
     }
 
-//    @Override
-//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        if (world.isClient()) {
-//            return TypedActionResult.pass(user.getStackInHand(hand));
-//        }
-//
-//        AdvanceTimeC2SPayload payload = new AdvanceTimeC2SPayload(user.getBlockPos());
-//
-//        for (ServerPlayerEntity player : PlayerLookup.world((ServerWorld) world)) {
-//            ServerPlayNetworking.send(player, payload);
-//        }
-//
-//        return TypedActionResult.success(user.getStackInHand(hand));
-//    }
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        if (world.isClient()) {
+            AdvanceTimeC2SPayload payload = new AdvanceTimeC2SPayload(user.getBlockPos());
+            ClientPlayNetworking.send(payload);
+        }
+        return TypedActionResult.success(user.getStackInHand(hand));
+    }
 }

@@ -27,7 +27,6 @@ public class ShowcaseFabric implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
 
-        //ModMessages.registerC2SPackets();
         PayloadTypeRegistry.playS2C().register(SummonLightningS2CPayload.ID, SummonLightningS2CPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(AdvanceTimeC2SPayload.ID, AdvanceTimeC2SPayload.CODEC);
 
