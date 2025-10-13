@@ -13,20 +13,20 @@ public class ShowcaseFabricClient implements ClientModInitializer {
     public void onInitializeClient() {
         ModMessages.registerS2CPackets();
 
-        ClientPlayNetworking.registerGlobalReceiver(SummonLightningS2CPayload.ID, (payload, context) -> {
-            ClientWorld world = context.client().world;
-
-            if (world == null) {
-                return;
-            }
-
-            BlockPos lightningPos = payload.pos();
-            LightningEntity entity = EntityType.LIGHTNING_BOLT.create(world);
-
-            if (entity != null) {
-                entity.setPosition(lightningPos.getX(), lightningPos.getY(), lightningPos.getZ());
-                world.addEntity(entity);
-            }
-        });
+//        ClientPlayNetworking.registerGlobalReceiver(SummonLightningS2CPayload.ID, (payload, context) -> {
+//            ClientWorld world = context.client().world;
+//
+//            if (world == null) {
+//                return;
+//            }
+//
+//            BlockPos lightningPos = payload.pos();
+//            LightningEntity entity = EntityType.LIGHTNING_BOLT.create(world);
+//
+//            if (entity != null) {
+//                entity.setPosition(lightningPos.getX(), lightningPos.getY(), lightningPos.getZ());
+//                world.addEntity(entity);
+//            }
+//        });
     }
 }
