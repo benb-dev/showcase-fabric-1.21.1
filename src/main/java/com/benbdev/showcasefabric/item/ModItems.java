@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 
     public static final Item TEST_ITEM = registerItem("test_item", new Item(new Item.Settings()));
+    public static final Item LIGHTNING_TATER_ITEM = registerItem("lightning_tater_item", new LightningTaterItem(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ShowcaseFabric.MOD_ID, name), item);
@@ -21,7 +22,9 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(TEST_ITEM);
+            fabricItemGroupEntries.add(LIGHTNING_TATER_ITEM);
         });
+
     }
 
 }

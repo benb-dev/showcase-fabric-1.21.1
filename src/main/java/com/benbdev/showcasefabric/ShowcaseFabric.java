@@ -2,8 +2,10 @@ package com.benbdev.showcasefabric;
 
 import com.benbdev.showcasefabric.block.ModBlocks;
 import com.benbdev.showcasefabric.item.ModItems;
+import com.benbdev.showcasefabric.networking.ModMessages;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +17,8 @@ public class ShowcaseFabric implements ModInitializer {
 	public void onInitialize() {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+
+        //ModMessages.registerC2SPackets();
+        PayloadTypeRegistry.playS2C().register(SummonLightningS2CPayload.ID, SummonLightningS2CPayload.CODEC);
 	}
 }

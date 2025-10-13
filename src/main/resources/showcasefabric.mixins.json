@@ -3,7 +3,8 @@
 	"package": "com.benbdev.showcasefabric.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+        "ClockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
