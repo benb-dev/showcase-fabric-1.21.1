@@ -5,6 +5,7 @@ import com.benbdev.showcasefabric.networking.ModMessages;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
@@ -13,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 
 public class ShowcaseFabricClient implements ClientModInitializer {
@@ -48,22 +50,39 @@ public class ShowcaseFabricClient implements ClientModInitializer {
 //
 //        });
 
-        UseEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+//        UseEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+//            if (!world.isClient()) {
+//                return ActionResult.PASS;
+//            }
+//
+//            ItemStack usedItemStack = player.getStackInHand(hand);
+//
+//            if (usedItemStack.isOf(ModItems.SUNDIAL_ITEM) && hand == Hand.MAIN_HAND) {
+//                System.out.println("In EVENT.register..");
+//                AdvanceTimeC2SPayload payload = new AdvanceTimeC2SPayload(player.getBlockPos());
+//                ClientPlayNetworking.send(payload);
+//
+//                return ActionResult.SUCCESS;
+//            }
+//
+//            return ActionResult.PASS;
+//        });
+
+        UseItemCallback.EVENT.register((player, world, hand) -> {
             if (!world.isClient()) {
-                return ActionResult.PASS;
+                return TypedActionResult.pass(player.getStackInHand(hand));
             }
 
             ItemStack usedItemStack = player.getStackInHand(hand);
 
             if (usedItemStack.isOf(ModItems.SUNDIAL_ITEM) && hand == Hand.MAIN_HAND) {
-                System.out.println("In EVENT.register..");
+                System.out.println("Right-clicked Sundial!");
                 AdvanceTimeC2SPayload payload = new AdvanceTimeC2SPayload(player.getBlockPos());
                 ClientPlayNetworking.send(payload);
-
-                return ActionResult.SUCCESS;
+                return TypedActionResult.success(usedItemStack);
             }
 
-            return ActionResult.PASS;
+            return TypedActionResult.pass(usedItemStack);
         });
     }
 }
