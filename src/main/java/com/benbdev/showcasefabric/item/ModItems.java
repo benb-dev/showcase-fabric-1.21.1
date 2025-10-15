@@ -13,6 +13,7 @@ public class ModItems {
     public static final Item TEST_ITEM = registerItem("test_item", new Item(new Item.Settings()));
     public static final Item LIGHTNING_STAFF_ITEM = registerItem("lightning_staff_item", new LightningStaffItem(new Item.Settings()));
     public static final Item SUNDIAL_ITEM = registerItem("sundial_item", new SundialItem(new Item.Settings()));
+    public static final Item TEST_STICK = registerItem("test_stick_item", new Item(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ShowcaseFabric.MOD_ID, name), item);
