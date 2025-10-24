@@ -9,9 +9,23 @@ A core theme will be TIME, specifically, day/night cycles. New crops will be add
 	
 	I also want to add a custom dimension that has specific crops that aren't available in the overworld
 	(if I can't get this working relatively quickly, default to Nether/End variants), and perhaps a custom
-	entity or two that help in farming in some way. Also fertilizers.
+	entity or two that help in farming in some way. Also, fertilizers.
 	
 *1 The most basic idea is to use the clock item (or modded clock items) in a particular way. 
 	which allows them to either skip a day/night, or with progression, skip multiple, or manipulate time
 	in specific ways (like adding a particular amount of ticks, instead of a multiple of full day/night).
+
+-----------------------------------------------------------------------------------------------------------
+Short term goal: add "Butter Chicken", and the resources needed to make that.
+1)   Tomato crop
+2)   Onion crop
+3)   Heavy cream (from milk)
+4)   Butter
+5)   Ghee (from butter)
+6)   Coriander
+7)   Cumin
+8)   Chili
+9)   Salt
+10)  Yogurt
+11)  Ginger crop
 	
