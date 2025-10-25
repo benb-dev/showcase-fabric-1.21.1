@@ -1,10 +1,13 @@
 package com.benbdev.showcasefabric.block;
 
 import com.benbdev.showcasefabric.ShowcaseFabric;
+import com.benbdev.showcasefabric.block.custom.TomatoCropBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -21,8 +24,21 @@ public class ModBlocks {
             .requiresTool()
             .sounds(BlockSoundGroup.BAMBOO_WOOD)));
 
+    public static final Block TOMATO_CROP = registerBlockWithoutBlockItem("tomato_crop", new TomatoCropBlock(AbstractBlock.Settings
+            .create()
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)
+            .mapColor(MapColor.DARK_GREEN)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(ShowcaseFabric.MOD_ID, name), block);
+    }
+
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(ShowcaseFabric.MOD_ID, name), block);
     }
 

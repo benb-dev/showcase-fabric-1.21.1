@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "showcasefabric:block/tomato_crop_stage5"
+  }
+}
