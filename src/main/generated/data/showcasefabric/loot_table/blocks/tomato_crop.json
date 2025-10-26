@@ -7,7 +7,7 @@
   ],
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 1.0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -19,7 +19,7 @@
                   "block": "showcasefabric:tomato_crop",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "5"
+                    "age": "4"
                   }
                 }
               ],
@@ -32,16 +32,16 @@
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 3.0
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 5.0,
       "conditions": [
         {
           "block": "showcasefabric:tomato_crop",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "5"
+            "age": "4"
           }
         }
       ],

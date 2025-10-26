@@ -14,9 +14,6 @@
     },
     "age=4": {
       "model": "showcasefabric:block/tomato_crop_stage4"
-    },
-    "age=5": {
-      "model": "showcasefabric:block/tomato_crop_stage5"
     }
   }
 }
