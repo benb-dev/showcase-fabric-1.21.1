@@ -1,6 +1,7 @@
 package com.benbdev.showcasefabric.block;
 
 import com.benbdev.showcasefabric.ShowcaseFabric;
+import com.benbdev.showcasefabric.block.custom.OnionCropBlock;
 import com.benbdev.showcasefabric.block.custom.TomatoCropBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,6 +26,15 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.BAMBOO_WOOD)));
 
     public static final Block TOMATO_CROP = registerBlockWithoutBlockItem("tomato_crop", new TomatoCropBlock(AbstractBlock.Settings
+            .create()
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)
+            .mapColor(MapColor.DARK_GREEN)));
+
+    public static final Block ONION_CROP = registerBlockWithoutBlockItem("onion_crop", new OnionCropBlock(AbstractBlock.Settings
             .create()
             .noCollision()
             .ticksRandomly()
