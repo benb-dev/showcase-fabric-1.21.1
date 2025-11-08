@@ -22,6 +22,7 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.TOMATO_CROP, new Item.Settings()));
     public static final Item ONION_ITEM = registerItem("onion_item", new AliasedBlockItem(ModBlocks.ONION_CROP, new Item.Settings().food(FoodComponents.CARROT)));
     public static final Item IRON_AOE_HOE = registerItem("iron_aoe_hoe", new IronAOEHoe(ToolMaterials.IRON, new Item.Settings(), 3));
+    public static final Item NETHERITE_AOE_HOE = registerItem("netherite_aoe_hoe", new IronAOEHoe(ToolMaterials.NETHERITE, new Item.Settings(), 7));
 
 
     private static Item registerItem(String name, Item item) {
