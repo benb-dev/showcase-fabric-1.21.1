@@ -7,14 +7,21 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.HoeItem;
+import net.minecraft.item.ItemUsage;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public abstract class AOEHoe extends HoeItem {
 
@@ -25,40 +32,48 @@ public abstract class AOEHoe extends HoeItem {
         this.AOESize = AOESize;
     }
 
+    @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
-        BlockPos pos = context.getBlockPos();
+        BlockPos center = context.getBlockPos();
         PlayerEntity player = context.getPlayer();
-        boolean tilled = false;
+        boolean tilledAny = false;
 
+        int halfOff = AOESize / 2;
 
-
+        List<BlockPos> positions = new ArrayList<>(AOESize * AOESize);
         for (int dx = 0; dx < AOESize; dx++) {
             for (int dz = 0; dz < AOESize; dz++) {
-                BlockPos targetPos = pos.add(dx, 0, dz);
-                BlockState targetState = world.getBlockState(targetPos);
-
-                if (targetState.isOf(Blocks.GRASS_BLOCK) ||
-                        targetState.isOf(Blocks.DIRT) ||
-                        targetState.isOf(Blocks.DIRT_PATH)) {
-
-                    BlockState farmland = Blocks.FARMLAND.getDefaultState();
-
-                    if (world.getBlockState(targetPos.up()).isAir()) {
-                        world.setBlockState(targetPos, farmland, Block.NOTIFY_ALL);
-                        tilled = true;
-                    }
-                }
+                // center the grid: offset ranges from -halfOff ... + (AOESize - halfOff - 1)
+                int ox = dx - halfOff;
+                int oz = dz - halfOff;
+                positions.add(center.add(ox, 0, oz));
             }
         }
 
-        if (tilled) {
-            world.playSound(null, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
-            return ActionResult.SUCCESS;
+        // Sort by distance to center (center first)
+        positions.sort(Comparator.comparingDouble(pos -> pos.getSquaredDistance(center)));
+
+        for (BlockPos targetPos : positions) {
+            // Build a BlockHitResult centered on the block so canTillFarmland sees a click on that block
+            Vec3d hitVec = Vec3d.ofCenter(targetPos);
+            BlockHitResult hitResult = new BlockHitResult(hitVec, context.getSide(), targetPos, false);
+            ItemUsageContext targetContext = new ItemUsageContext(player, context.getHand(), hitResult);
+
+            if (HoeItem.canTillFarmland(targetContext)) {
+                // Only modify world on server
+                if (!world.isClient) {
+                    world.setBlockState(targetPos, Blocks.FARMLAND.getDefaultState(), Block.NOTIFY_ALL);
+                    // Damage tool
+                    context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
+                }
+                // play sound (can be client or server); play at target for nicer effect
+                world.playSound(null, targetPos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                tilledAny = true;
+            }
         }
 
-        return ActionResult.PASS;
+        return tilledAny ? ActionResult.SUCCESS : ActionResult.PASS;
     }
 
 }
