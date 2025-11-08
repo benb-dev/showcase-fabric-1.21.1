@@ -10,6 +10,10 @@
   "item.showcasefabric.tomato_item": "Tomato",
   "item.showcasefabric.tomato_seeds": "Tomato Seeds",
   "item.showcasefabric.onion_item": "Onion",
+  "item.showcasefabric.wooden_aoe_hoe": "Wooden Hoemmer",
+  "item.showcasefabric.stone_aoe_hoe": "Stone Hoemmer",
   "item.showcasefabric.iron_aoe_hoe": "Iron Hoemmer",
+  "item.showcasefabric.golden_aoe_hoe": "Golden Hoemmer",
+  "item.showcasefabric.diamond_aoe_hoe": "Diamond Hoemmer",
   "item.showcasefabric.netherite_aoe_hoe": "Netherite Hoemmer"
 }
