@@ -36,6 +36,7 @@ public abstract class AOEHoe extends HoeItem {
         World world = context.getWorld();
         BlockPos center = context.getBlockPos();
         PlayerEntity player = context.getPlayer();
+
         boolean tilledAny = false;
 
         int halfOff = AOESize / 2;
@@ -59,17 +60,19 @@ public abstract class AOEHoe extends HoeItem {
             BlockHitResult hitResult = new BlockHitResult(hitVec, context.getSide(), targetPos, false);
             ItemUsageContext targetContext = new ItemUsageContext(player, context.getHand(), hitResult);
 
-            if (HoeItem.canTillFarmland(targetContext)) {
-                // Only modify world on server
-                if (!world.isClient) {
-                    world.setBlockState(targetPos, Blocks.FARMLAND.getDefaultState(), Block.NOTIFY_ALL);
-                    // Damage tool
-                    context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
-                }
-                // play sound (can be client or server); play at target for nicer effect
+            // Get the block
+            BlockState targetState = world.getBlockState(targetPos);
+            Block block = targetState.getBlock();
+
+            if ((block == Blocks.DIRT || block == Blocks.GRASS_BLOCK || block == Blocks.DIRT_PATH)
+                    && world.getBlockState(targetPos.up()).isAir()) {
+
+                world.setBlockState(targetPos, Blocks.FARMLAND.getDefaultState(), Block.NOTIFY_ALL);
                 world.playSound(null, targetPos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
                 tilledAny = true;
             }
+
         }
 
         return tilledAny ? ActionResult.SUCCESS : ActionResult.PASS;
