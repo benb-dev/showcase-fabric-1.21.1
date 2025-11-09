@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "MM ",
+    "MS ",
+    "MS "
+  ],
+  "result": {
+    "count": 1,
+    "id": "showcasefabric:wooden_aoe_hoe"
+  }
+}

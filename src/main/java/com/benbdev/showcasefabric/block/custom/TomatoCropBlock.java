@@ -13,6 +13,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldEvents;
 
 public class TomatoCropBlock extends CropBlock implements FertilizableCrop {
     public static final int MAX_AGE = 4;
@@ -54,7 +55,7 @@ public class TomatoCropBlock extends CropBlock implements FertilizableCrop {
         }
         world.setBlockState(pos, state.with(FERTILIZED, true), Block.NOTIFY_ALL);
         world.playSound(null, pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        world.syncWorldEvent(2005, pos, 0);
+        world.syncWorldEvent(WorldEvents.BONE_MEAL_USED, pos, 15);
         return true;
     }
 

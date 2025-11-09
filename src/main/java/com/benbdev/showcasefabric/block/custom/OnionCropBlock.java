@@ -6,6 +6,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -13,6 +15,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldEvents;
 
 public class OnionCropBlock extends CropBlock implements FertilizableCrop{
 
@@ -55,7 +58,8 @@ public class OnionCropBlock extends CropBlock implements FertilizableCrop{
         }
         world.setBlockState(pos, state.with(FERTILIZED, true), Block.NOTIFY_ALL);
         world.playSound(null, pos, SoundEvents.ITEM_BONE_MEAL_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        world.syncWorldEvent(2005, pos, 0);
+        world.syncWorldEvent(WorldEvents.BONE_MEAL_USED, pos, 15);
+        //world.addParticle(ParticleTypes.CRIT, pos.getX(), pos.getY(), pos.getZ(),0,0,0);
         return true;
     }
 
