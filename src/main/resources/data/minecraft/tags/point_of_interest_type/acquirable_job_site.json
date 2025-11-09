@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "showcasefabric:dejiek_poi",
+      "required": false
+    }
+  ]
+}
