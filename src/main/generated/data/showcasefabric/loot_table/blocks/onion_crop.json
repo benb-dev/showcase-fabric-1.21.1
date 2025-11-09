@@ -7,7 +7,7 @@
   ],
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 1.0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -16,10 +16,10 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "showcasefabric:tomato_crop",
+                  "block": "showcasefabric:onion_crop",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "4"
+                    "age": "5"
                   }
                 }
               ],
@@ -32,16 +32,16 @@
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 3.0
     },
     {
-      "bonus_rolls": 0.0,
+      "bonus_rolls": 5.0,
       "conditions": [
         {
-          "block": "showcasefabric:tomato_crop",
+          "block": "showcasefabric:onion_crop",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "4"
+            "age": "5"
           }
         }
       ],
@@ -63,6 +63,35 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "showcasefabric:onion_crop",
+          "properties": {
+            "age": "5",
+            "fertilized": "true"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "showcasefabric:onion_item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

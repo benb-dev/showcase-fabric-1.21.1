@@ -27,7 +27,7 @@ public class ModItems {
     public static final Item GOLDEN_AOE_HOE = registerItem("golden_aoe_hoe", new IronAOEHoe(ToolMaterials.GOLD, new Item.Settings(), 5));
     public static final Item DIAMOND_AOE_HOE = registerItem("diamond_aoe_hoe", new IronAOEHoe(ToolMaterials.DIAMOND, new Item.Settings(), 5));
     public static final Item NETHERITE_AOE_HOE = registerItem("netherite_aoe_hoe", new IronAOEHoe(ToolMaterials.NETHERITE, new Item.Settings(), 7));
-
+    public static final Item FERTILIZER = registerItem("fertilizer", new FertilizerItem(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ShowcaseFabric.MOD_ID, name), item);
