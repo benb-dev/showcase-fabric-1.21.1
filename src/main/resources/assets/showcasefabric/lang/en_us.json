@@ -18,5 +18,7 @@
   "item.showcasefabric.golden_aoe_hoe": "Golden Hoemmer",
   "item.showcasefabric.diamond_aoe_hoe": "Diamond Hoemmer",
   "item.showcasefabric.netherite_aoe_hoe": "Netherite Hoemmer",
-  "item.showcasefabric.fertilizer": "Fertilizer"
+  "item.showcasefabric.fertilizer": "Fertilizer",
+
+  "itemGroup.showcasefabric": "Showcase Fabric"
 }

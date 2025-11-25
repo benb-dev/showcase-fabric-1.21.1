@@ -30,6 +30,7 @@ public class ShowcaseFabric implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModItems.registerModItems();
+        ModItems.registerItemGroups();
         ModBlocks.registerModBlocks();
         ModVillagers.registerVillagers();
 
