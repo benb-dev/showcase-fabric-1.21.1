@@ -6,13 +6,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ItemUsage;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -70,12 +68,17 @@ public abstract class AOEHoe extends HoeItem {
 
                 world.setBlockState(targetPos, Blocks.FARMLAND.getDefaultState(), Block.NOTIFY_ALL);
                 world.playSound(null, targetPos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+                if (world.random.nextFloat() < 0.20f) {
+                    Item seed = ModItems.SEEDS.get(world.random.nextInt(ModItems.SEEDS.size()));
+                    ItemScatterer.spawn(world, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                            new ItemStack(seed));
+                }
                 context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
                 tilledAny = true;
             }
 
         }
-
         return tilledAny ? ActionResult.SUCCESS : ActionResult.PASS;
     }
 

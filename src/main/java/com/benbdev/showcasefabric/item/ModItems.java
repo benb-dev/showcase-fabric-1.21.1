@@ -13,6 +13,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
 public class ModItems {
 
     public static final Item TEST_ITEM = registerItem("test_item", new Item(new Item.Settings()));
@@ -31,6 +33,8 @@ public class ModItems {
     public static final Item DIAMOND_AOE_HOE = registerItem("diamond_aoe_hoe", new IronAOEHoe(ToolMaterials.DIAMOND, new Item.Settings(), 5));
     public static final Item NETHERITE_AOE_HOE = registerItem("netherite_aoe_hoe", new IronAOEHoe(ToolMaterials.NETHERITE, new Item.Settings(), 7));
     public static final Item FERTILIZER = registerItem("fertilizer", new FertilizerItem(new Item.Settings()));
+
+    public static final List<Item> SEEDS = List.of(TOMATO_SEEDS,ONION_ITEM);
 
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
             RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(ShowcaseFabric.MOD_ID, "item_group"));
