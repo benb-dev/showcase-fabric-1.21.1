@@ -1,6 +1,7 @@
 package com.benbdev.showcasefabric;
 
 import com.benbdev.showcasefabric.block.ModBlocks;
+import com.benbdev.showcasefabric.block.entity.ModEntityTypes;
 import com.benbdev.showcasefabric.item.ModItems;
 import com.benbdev.showcasefabric.villager.ModVillagers;
 import net.fabricmc.api.ModInitializer;
@@ -35,6 +36,7 @@ public class ShowcaseFabric implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        ModEntityTypes.registerEntityTypes();
         ModItems.registerModItems();
         ModItems.registerItemGroups();
         ModBlocks.registerModBlocks();
@@ -45,7 +47,6 @@ public class ShowcaseFabric implements ModInitializer {
         PayloadTypeRegistry.playC2S().register(SummonLightningC2SPayload.ID, SummonLightningC2SPayload.CODEC);
 
         ServerPlayNetworking.registerGlobalReceiver(AdvanceTimeC2SPayload.ID, (payload, context) -> {
-            System.out.println("HI!");
             ServerWorld world = context.player().getServerWorld();
             world.setTimeOfDay(world.getTimeOfDay() + 12000);
         });
@@ -75,21 +76,19 @@ public class ShowcaseFabric implements ModInitializer {
             BlockPos pos = hitResult.getBlockPos();
             BlockState state = world.getBlockState(pos);
 
-            // Only trigger on grass block (change to whatever you want)
             if (state.getBlock() == Blocks.GRASS_BLOCK) {
 
                 // 20% chance
                 if (world.random.nextFloat() < 0.20f) {
 
-                    // pick a random seed from your list
                     Item randomSeed = ModItems.SEEDS.get(world.random.nextInt(ModItems.SEEDS.size()));
 
-                    // drop it
+                    // spawn it
                     ItemScatterer.spawn(world, pos.getX(), pos.getY() + 1, pos.getZ(), new ItemStack(randomSeed));
                 }
             }
 
-            return ActionResult.PASS;  // let vanilla finish hoeing the block
+            return ActionResult.PASS;
         });
 
 	}

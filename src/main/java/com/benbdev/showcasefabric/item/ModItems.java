@@ -24,7 +24,7 @@ public class ModItems {
     public static final Item SUNDIAL_ITEM = registerItem("sundial_item", new SundialItem(new Item.Settings()));
     public static final Item TEST_STICK_ITEM = registerItem("test_stick_item", new Item(new Item.Settings()));
     public static final Item YOGURT_ITEM = registerItem("yogurt_item", new Item(new Item.Settings().food(FoodComponents.APPLE)));
-    public static final Item TOMATO_ITEM = registerItem("tomato_item", new Item(new Item.Settings().food(FoodComponents.APPLE)));
+    public static final Item TOMATO_ITEM = registerItem("tomato_item", new TomatoItem(new Item.Settings().food(FoodComponents.APPLE)));
     public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
             new AliasedBlockItem(ModBlocks.TOMATO_CROP, new Item.Settings()));
     public static final Item ONION_ITEM = registerItem("onion_item", new Item(new Item.Settings().food(FoodComponents.CARROT)));
