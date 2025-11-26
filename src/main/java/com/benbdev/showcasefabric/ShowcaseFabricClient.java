@@ -16,6 +16,7 @@ public class ShowcaseFabricClient implements ClientModInitializer {
     public void onInitializeClient() {
         ModMessages.registerS2CPackets();
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.TOMATO_CROP);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.CHILI_CROP);
 
 //        ClientPlayNetworking.registerGlobalReceiver(SummonLightningS2CPayload.ID, (payload, context) -> {
 //            ClientWorld world = context.client().world;

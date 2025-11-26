@@ -1,4 +1,5 @@
-// 1.21.1	2025-11-09T15:49:49.1871214	Showcase Fabric/Block Loot Tables
+// 1.21.1	2025-11-25T20:09:23.7575081	Showcase Fabric/Block Loot Tables
 5af3cce5fcde747fc14bcbd3c8e01e0b50b3fd2e data\showcasefabric\loot_table\blocks\tomato_crop.json
 27a64237ea7d9b2975eaeef49150a4ab57e599bb data\showcasefabric\loot_table\blocks\test_block.json
 4d93e7eadf4740e6bcea17c13a875d270e4d5f53 data\showcasefabric\loot_table\blocks\onion_crop.json
+0a066a17ff5a98ad9d6d8874a5ca4a87ebe82db9 data\showcasefabric\loot_table\blocks\chili_crop.json

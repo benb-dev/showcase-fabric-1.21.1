@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:milk_bucket"
+      "item": "showcasefabric:milk_item"
     }
   ],
   "result": {

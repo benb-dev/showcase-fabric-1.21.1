@@ -26,6 +26,7 @@ public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
                 .input(Items.MILK_BUCKET)
                 .criterion(FabricRecipeProvider.hasItem(Items.MILK_BUCKET), FabricRecipeProvider.conditionsFromItem(Items.MILK_BUCKET))
                 .offerTo(recipeExporter);
+
         createWoodenHoemmerRecipe(recipeExporter);
         createHoemmerRecipe(recipeExporter, Items.COBBLESTONE, ModItems.STONE_AOE_HOE);
         createHoemmerRecipe(recipeExporter, Items.IRON_INGOT, ModItems.IRON_AOE_HOE);

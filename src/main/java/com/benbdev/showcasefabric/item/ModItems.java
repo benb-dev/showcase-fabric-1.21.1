@@ -33,8 +33,13 @@ public class ModItems {
     public static final Item DIAMOND_AOE_HOE = registerItem("diamond_aoe_hoe", new IronAOEHoe(ToolMaterials.DIAMOND, new Item.Settings(), 5));
     public static final Item NETHERITE_AOE_HOE = registerItem("netherite_aoe_hoe", new IronAOEHoe(ToolMaterials.NETHERITE, new Item.Settings(), 7));
     public static final Item FERTILIZER = registerItem("fertilizer", new FertilizerItem(new Item.Settings()));
-
-    public static final List<Item> SEEDS = List.of(TOMATO_SEEDS,ONION_ITEM);
+    public static final Item HEAVY_CREAM_ITEM = registerItem("heavy_cream_item", new Item(new Item.Settings().food(FoodComponents.DRIED_KELP)));
+    public static final Item MILK_ITEM = registerItem("milk_item", new Item(new Item.Settings()));
+    public static final Item CORIANDER_SEEDS = registerItem("coriander_seed_item", new Item(new Item.Settings()));
+    public static final Item CUMIN_SEEDS = registerItem("cumin_seed_item", new Item(new Item.Settings()));
+    public static final Item CHILI_PEPPER_ITEM = registerItem("chili_pepper_item", new Item(new Item.Settings()));
+    public static final Item CHILI_PEPPER_SEEDS = registerItem("chili_pepper_seeds", new AliasedBlockItem(ModBlocks.CHILI_CROP, new Item.Settings()));
+    public static final List<Item> SEEDS = List.of(TOMATO_SEEDS,ONION_ITEM, CORIANDER_SEEDS, CUMIN_SEEDS, CHILI_PEPPER_SEEDS);
 
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
             RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(ShowcaseFabric.MOD_ID, "item_group"));
@@ -70,6 +75,12 @@ public class ModItems {
                             entries.add(ModItems.GOLDEN_AOE_HOE);
                             entries.add(ModItems.DIAMOND_AOE_HOE);
                             entries.add(ModItems.NETHERITE_AOE_HOE);
+                            entries.add(ModItems.HEAVY_CREAM_ITEM);
+                            entries.add(ModItems.MILK_ITEM);
+                            entries.add(ModItems.CORIANDER_SEEDS);
+                            entries.add(ModItems.CUMIN_SEEDS);
+                            entries.add(ModItems.CHILI_PEPPER_ITEM);
+                            entries.add(ModItems.CHILI_PEPPER_SEEDS);
                         })
                         .build()
         );

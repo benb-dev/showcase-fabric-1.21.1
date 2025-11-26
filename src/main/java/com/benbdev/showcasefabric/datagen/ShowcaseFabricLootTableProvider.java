@@ -24,6 +24,7 @@ public class ShowcaseFabricLootTableProvider extends FabricBlockLootTableProvide
                 .properties(StatePredicate.Builder.create().exactMatch(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE));
         this.addDrop(ModBlocks.TOMATO_CROP, this.cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO_ITEM, ModItems.TOMATO_SEEDS, builder));
         this.addDrop(ModBlocks.ONION_CROP, this.cropDrops(ModBlocks.ONION_CROP, ModItems.ONION_ITEM, ModItems.ONION_ITEM, builder));
+        this.addDrop(ModBlocks.CHILI_CROP, this.cropDrops(ModBlocks.CHILI_CROP, ModItems.CHILI_PEPPER_ITEM, ModItems.CHILI_PEPPER_SEEDS, builder));
 
 
     }

@@ -1,6 +1,7 @@
 {
   "block.showcasefabric.test_block": "Test Block",
   "block.showcasefabric.tomato_crop": "Tomato Crop",
+  "block.showcasefabric.chili_crop": "Chili Pepper Crop",
 
   "entity.minecraft.villager.showcasefabric.tiller": "Tiller",
 
@@ -19,6 +20,12 @@
   "item.showcasefabric.diamond_aoe_hoe": "Diamond Hoemmer",
   "item.showcasefabric.netherite_aoe_hoe": "Netherite Hoemmer",
   "item.showcasefabric.fertilizer": "Fertilizer",
+  "item.showcasefabric.heavy_cream_item": "Heavy Cream",
+  "item.showcasefabric.milk_item": "Milk",
+  "item.showcasefabric.coriander_seed_item": "Coriander Seeds",
+  "item.showcasefabric.cumin_seed_item": "Cumin Seeds",
+  "item.showcasefabric.chili_pepper_item": "Chili Pepper",
+  "item.showcasefabric.chili_pepper_seeds": "Chili Pepper Seeds",
 
   "itemGroup.showcasefabric": "Showcase Fabric"
 }

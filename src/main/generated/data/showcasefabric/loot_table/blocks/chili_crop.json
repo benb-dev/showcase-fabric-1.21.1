@@ -1,0 +1,97 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "showcasefabric:chili_crop",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "3"
+                  }
+                }
+              ],
+              "name": "showcasefabric:chili_pepper_item"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "showcasefabric:chili_pepper_seeds"
+            }
+          ]
+        }
+      ],
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "showcasefabric:chili_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:binomial_with_bonus_count",
+              "function": "minecraft:apply_bonus",
+              "parameters": {
+                "extra": 3,
+                "probability": 0.5714286
+              }
+            }
+          ],
+          "name": "showcasefabric:chili_pepper_seeds"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "showcasefabric:chili_crop",
+          "properties": {
+            "age": "3",
+            "fertilized": "true"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "showcasefabric:chili_pepper_item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

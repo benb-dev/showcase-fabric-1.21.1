@@ -69,7 +69,7 @@ public abstract class AOEHoe extends HoeItem {
                 world.setBlockState(targetPos, Blocks.FARMLAND.getDefaultState(), Block.NOTIFY_ALL);
                 world.playSound(null, targetPos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-                if (world.random.nextFloat() < 0.20f) {
+                if (world.random.nextFloat() < 0.10f) {
                     Item seed = ModItems.SEEDS.get(world.random.nextInt(ModItems.SEEDS.size()));
                     ItemScatterer.spawn(world, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
                             new ItemStack(seed));

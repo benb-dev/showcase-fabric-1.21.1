@@ -1,5 +1,6 @@
 package com.benbdev.showcasefabric.datagen;
 
+import com.benbdev.showcasefabric.block.ChiliCropBlock;
 import com.benbdev.showcasefabric.block.ModBlocks;
 import com.benbdev.showcasefabric.block.custom.OnionCropBlock;
 import com.benbdev.showcasefabric.block.custom.TomatoCropBlock;
@@ -19,11 +20,13 @@ public class ShowcaseFabricModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4);
         blockStateModelGenerator.registerCrop(ModBlocks.ONION_CROP, OnionCropBlock.AGE, 0, 1, 2, 3, 4, 5);
+        blockStateModelGenerator.registerCrop(ModBlocks.CHILI_CROP, ChiliCropBlock.AGE, 0, 1, 2, 3);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.TOMATO_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHILI_PEPPER_ITEM, Models.GENERATED);
         //itemModelGenerator.register(ModItems.ONION_ITEM, Models.GENERATED);
 
     }

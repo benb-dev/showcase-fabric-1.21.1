@@ -43,6 +43,15 @@ public class ModBlocks {
             .pistonBehavior(PistonBehavior.DESTROY)
             .mapColor(MapColor.DARK_GREEN)));
 
+    public static final Block CHILI_CROP = registerBlockWithoutBlockItem("chili_crop", new ChiliCropBlock(AbstractBlock.Settings
+            .create()
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)
+            .mapColor(MapColor.DARK_GREEN)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(ShowcaseFabric.MOD_ID, name), block);
