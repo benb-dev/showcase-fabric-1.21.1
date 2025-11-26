@@ -9,10 +9,13 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
@@ -22,9 +25,17 @@ public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.YOGURT_ITEM, 4)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.FRESH_WATER_ITEM, 8)
+                .input(Items.WATER_BUCKET)
+                .criterion(FabricRecipeProvider.hasItem(Items.WATER_BUCKET), FabricRecipeProvider.conditionsFromItem(Items.WATER_BUCKET))
+                .offerTo(recipeExporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.FRESH_MILK_ITEM, 8)
                 .input(Items.MILK_BUCKET)
                 .criterion(FabricRecipeProvider.hasItem(Items.MILK_BUCKET), FabricRecipeProvider.conditionsFromItem(Items.MILK_BUCKET))
+                .offerTo(recipeExporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.YOGURT_ITEM, 1)
+                .input(ModItems.FRESH_MILK_ITEM)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.FRESH_MILK_ITEM), FabricRecipeProvider.conditionsFromItem(ModItems.FRESH_MILK_ITEM))
                 .offerTo(recipeExporter);
 
         createWoodenHoemmerRecipe(recipeExporter);
@@ -33,6 +44,17 @@ public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
         createHoemmerRecipe(recipeExporter, Items.GOLD_INGOT, ModItems.GOLDEN_AOE_HOE);
         createHoemmerRecipe(recipeExporter, Items.DIAMOND, ModItems.DIAMOND_AOE_HOE);
         createHoemmerRecipe(recipeExporter, Items.NETHERITE_INGOT, ModItems.NETHERITE_AOE_HOE);
+        offerSmelting(
+                recipeExporter,
+                List.of(ModItems.FRESH_WATER_ITEM),
+                RecipeCategory.FOOD,
+                ModItems.SALT_ITEM,
+                0.35f,
+                200,
+                "salt_item"
+        );
+        generateSeedsRecipes(recipeExporter);
+
     }
 
     private void createHoemmerRecipe(RecipeExporter exporter, Item material, Item output) {
@@ -56,5 +78,19 @@ public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(Items.OAK_PLANKS), conditionsFromItem(Items.OAK_PLANKS))
                 .offerTo(exporter);
+    }
+
+    private void createSeedRecipe(RecipeExporter exporter, Item cropFood, Item seedOutput) {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, seedOutput)
+                .input(cropFood)
+                .criterion(FabricRecipeProvider.hasItem(cropFood),
+                        FabricRecipeProvider.conditionsFromItem(cropFood))
+                .offerTo(exporter);
+    }
+
+    private void generateSeedsRecipes(RecipeExporter exporter) {
+        ModItems.SEED_MAP.forEach((key, value) -> {
+            createSeedRecipe(exporter, key, value);
+        });
     }
 }

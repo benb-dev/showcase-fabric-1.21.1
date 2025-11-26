@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fresh_water_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "showcasefabric:fresh_water_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "showcase-fabric:salt_item_from_smelting_fresh_water_item"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fresh_water_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "showcase-fabric:salt_item_from_smelting_fresh_water_item"
+    ]
+  }
+}

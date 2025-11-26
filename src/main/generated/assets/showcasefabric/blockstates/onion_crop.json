@@ -11,12 +11,6 @@
     },
     "age=3": {
       "model": "showcasefabric:block/onion_crop_stage3"
-    },
-    "age=4": {
-      "model": "showcasefabric:block/onion_crop_stage4"
-    },
-    "age=5": {
-      "model": "showcasefabric:block/onion_crop_stage5"
     }
   }
 }

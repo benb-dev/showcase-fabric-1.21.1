@@ -4,7 +4,6 @@ import com.benbdev.showcasefabric.ShowcaseFabric;
 import com.benbdev.showcasefabric.block.custom.OnionCropBlock;
 import com.benbdev.showcasefabric.block.custom.TomatoCropBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;

@@ -19,8 +19,8 @@ import net.minecraft.world.WorldEvents;
 
 public class OnionCropBlock extends CropBlock implements FertilizableCrop{
 
-    public static final int MAX_AGE = 5;
-    public static final IntProperty AGE = IntProperty.of("age", 0, 5);
+    public static final int MAX_AGE = 3;
+    public static final IntProperty AGE = IntProperty.of("age", 0, 3);
     public static final BooleanProperty FERTILIZED = BooleanProperty.of("fertilized");
 
     public OnionCropBlock(Settings settings) {

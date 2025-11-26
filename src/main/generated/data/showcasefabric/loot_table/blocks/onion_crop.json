@@ -19,7 +19,7 @@
                   "block": "showcasefabric:onion_crop",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "5"
+                    "age": "3"
                   }
                 }
               ],
@@ -41,7 +41,7 @@
           "block": "showcasefabric:onion_crop",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "5"
+            "age": "3"
           }
         }
       ],
@@ -71,7 +71,7 @@
           "condition": "minecraft:block_state_property",
           "block": "showcasefabric:onion_crop",
           "properties": {
-            "age": "5",
+            "age": "3",
             "fertilized": "true"
           }
         }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "group": "salt_item",
+  "ingredient": {
+    "item": "showcasefabric:fresh_water_item"
+  },
+  "result": {
+    "id": "showcasefabric:salt_item"
+  }
+}

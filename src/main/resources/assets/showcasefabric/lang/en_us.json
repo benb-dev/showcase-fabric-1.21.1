@@ -13,6 +13,7 @@
   "item.showcasefabric.tomato_item": "Tomato",
   "item.showcasefabric.tomato_seeds": "Tomato Seeds",
   "item.showcasefabric.onion_item": "Onion",
+  "item.showcasefabric.onion_seeds": "Onion Seeds",
   "item.showcasefabric.wooden_aoe_hoe": "Wooden Hoemmer",
   "item.showcasefabric.stone_aoe_hoe": "Stone Hoemmer",
   "item.showcasefabric.iron_aoe_hoe": "Iron Hoemmer",
@@ -21,11 +22,13 @@
   "item.showcasefabric.netherite_aoe_hoe": "Netherite Hoemmer",
   "item.showcasefabric.fertilizer": "Fertilizer",
   "item.showcasefabric.heavy_cream_item": "Heavy Cream",
-  "item.showcasefabric.milk_item": "Milk",
+  "item.showcasefabric.fresh_milk_item": "Fresh Milk",
+  "item.showcasefabric.fresh_water_item": "Fresh Water",
   "item.showcasefabric.coriander_seed_item": "Coriander Seeds",
   "item.showcasefabric.cumin_seed_item": "Cumin Seeds",
   "item.showcasefabric.chili_pepper_item": "Chili Pepper",
   "item.showcasefabric.chili_pepper_seeds": "Chili Pepper Seeds",
+  "item.showcasefabric.salt_item": "Salt",
 
   "itemGroup.showcasefabric": "Showcase Fabric"
 }

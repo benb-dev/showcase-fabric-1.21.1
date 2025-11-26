@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "showcasefabric:onion_item"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "showcasefabric:onion_seeds"
+  }
+}
