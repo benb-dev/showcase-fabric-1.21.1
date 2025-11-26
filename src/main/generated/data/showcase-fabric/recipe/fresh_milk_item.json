@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "showcasefabric:fresh_milk_item"
+      "item": "minecraft:milk_bucket"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "showcasefabric:yogurt_item"
+    "count": 8,
+    "id": "showcasefabric:fresh_milk_item"
   }
 }
