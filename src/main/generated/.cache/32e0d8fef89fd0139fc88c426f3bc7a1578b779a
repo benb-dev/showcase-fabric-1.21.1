@@ -1,9 +1,10 @@
-// 1.21.1	2025-11-26T16:37:32.7959962	Showcase Fabric/Recipes
+// 1.21.1	2025-11-26T22:02:05.6363016	Showcase Fabric/Recipes
 6e7995ac8a6e2621ebbe9574b7cd4618a691b18f data\showcase-fabric\advancement\recipes\tools\stone_aoe_hoe.json
 002eaecd0c3303ac51cb2ab0e4df332daeae6391 data\showcase-fabric\recipe\yogurt_item.json
 bba8f5dc5e80635706b7a51b489cf912fa98c49d data\showcase-fabric\recipe\tomato_seeds.json
 140dd8839b0d63732043760d3c8e1aba0eec9515 data\showcase-fabric\recipe\fresh_water_item.json
 21333ea5c6c5c84de58a3b7afef2ccb726cb1f75 data\showcase-fabric\recipe\fresh_milk_item.json
+02acd93358fddd87fecb7f1c7662a075439643e6 data\showcase-fabric\advancement\recipes\misc\fertilizer.json
 901b0fb9efa2f3d571a93250a1c34510afc23960 data\showcase-fabric\recipe\salt_item_from_smelting_fresh_water_item.json
 a6faa156c7fdef27cd3690c3d71eef92f2fdfc18 data\showcase-fabric\advancement\recipes\food\tomato_seeds.json
 bedc1c1c8a9a297ca6642ae2f9a10e15e0f170bf data\showcase-fabric\recipe\onion_seeds.json
@@ -21,6 +22,7 @@ a7ace560cc40f72dc22573090c491762a0eaf65d data\showcase-fabric\recipe\wooden_aoe_
 45023fa475431283e94f34d27242f251b936eec5 data\showcase-fabric\advancement\recipes\tools\golden_aoe_hoe.json
 567622b0915cca1be49715784403d7456cf73496 data\showcase-fabric\advancement\recipes\food\onion_seeds.json
 e65e6281d9803733fde7d78160e3cc5f1f2c98a5 data\showcase-fabric\advancement\recipes\food\fresh_milk_item.json
+54607562c41d4bd49b0c00925138d9636e4e5121 data\showcase-fabric\recipe\fertilizer.json
 f14280ee2be55ec5ee7314eded8d6371ba3f740e data\showcase-fabric\advancement\recipes\tools\netherite_aoe_hoe.json
 1a667a6b2b598a71bb82f32e760792d715cae0d7 data\showcase-fabric\advancement\recipes\food\yogurt_item.json
 1e680afc1e22580a84827f8b03b40ee5bc4daa11 data\showcase-fabric\recipe\golden_aoe_hoe.json

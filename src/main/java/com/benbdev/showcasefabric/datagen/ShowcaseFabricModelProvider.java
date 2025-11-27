@@ -21,6 +21,7 @@ public class ShowcaseFabricModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4);
         blockStateModelGenerator.registerCrop(ModBlocks.ONION_CROP, OnionCropBlock.AGE, 0, 1, 2, 3);
         blockStateModelGenerator.registerCrop(ModBlocks.CHILI_CROP, ChiliCropBlock.AGE, 0, 1, 2, 3);
+        blockStateModelGenerator.registerGeneric(ModBlocks.COMPOSTER_FERTILIZER);
     }
 
     @Override
@@ -32,5 +33,7 @@ public class ShowcaseFabricModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FRESH_MILK_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.FRESH_WATER_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.SALT_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CORIANDER_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CUMIN_SEEDS, Models.GENERATED);
     }
 }

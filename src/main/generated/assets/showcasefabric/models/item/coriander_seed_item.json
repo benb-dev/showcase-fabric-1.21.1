@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "showcasefabric:item/coriander_seed_item"
+  }
+}

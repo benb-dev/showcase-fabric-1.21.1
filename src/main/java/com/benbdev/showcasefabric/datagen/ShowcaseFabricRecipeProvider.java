@@ -1,5 +1,6 @@
 package com.benbdev.showcasefabric.datagen;
 
+import com.benbdev.showcasefabric.item.FoodStuffs;
 import com.benbdev.showcasefabric.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -11,14 +12,22 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
+    TagKey<Item> FOOD = TagKey.of(
+            RegistryKeys.ITEM,
+            Identifier.of("minecraft", "food")
+    );
+
     public ShowcaseFabricRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
@@ -36,6 +45,11 @@ public class ShowcaseFabricRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.YOGURT_ITEM, 1)
                 .input(ModItems.FRESH_MILK_ITEM)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.FRESH_MILK_ITEM), FabricRecipeProvider.conditionsFromItem(ModItems.FRESH_MILK_ITEM))
+                .offerTo(recipeExporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.FERTILIZER, 3)
+                .input(Items.BONE_MEAL)
+                .input(Ingredient.fromTag(FOOD))
+                .criterion(FabricRecipeProvider.hasItem(Items.BONE_MEAL), FabricRecipeProvider.conditionsFromItem(Items.BONE_MEAL))
                 .offerTo(recipeExporter);
 
         createWoodenHoemmerRecipe(recipeExporter);

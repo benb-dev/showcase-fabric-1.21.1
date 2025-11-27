@@ -1,5 +1,6 @@
 package com.benbdev.showcasefabric;
 
+import com.benbdev.showcasefabric.datagen.ShowcaseFabricItemTagProvider;
 import com.benbdev.showcasefabric.datagen.ShowcaseFabricLootTableProvider;
 import com.benbdev.showcasefabric.datagen.ShowcaseFabricModelProvider;
 import com.benbdev.showcasefabric.datagen.ShowcaseFabricRecipeProvider;
@@ -13,5 +14,6 @@ public class ShowcaseFabricDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ShowcaseFabricRecipeProvider::new);
         pack.addProvider(ShowcaseFabricModelProvider::new);
         pack.addProvider(ShowcaseFabricLootTableProvider::new);
+        pack.addProvider(ShowcaseFabricItemTagProvider::new);
     }
 }

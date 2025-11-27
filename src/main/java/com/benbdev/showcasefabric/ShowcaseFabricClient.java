@@ -14,5 +14,6 @@ public class ShowcaseFabricClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.TOMATO_CROP);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.ONION_CROP);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.CHILI_CROP);
+        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COMPOSTER_FERTILIZER, RenderLayer.getCutout());
     }
 }

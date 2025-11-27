@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "showcasefabric:block/composter_fertilizer_down",
+    "east": "showcasefabric:block/composter_fertilizer_east",
+    "north": "showcasefabric:block/composter_fertilizer_north",
+    "particle": "showcasefabric:block/composter_fertilizer_particle",
+    "south": "showcasefabric:block/composter_fertilizer_south",
+    "up": "showcasefabric:block/composter_fertilizer_up",
+    "west": "showcasefabric:block/composter_fertilizer_west"
+  }
+}

@@ -3,6 +3,7 @@ package com.benbdev.showcasefabric;
 import com.benbdev.showcasefabric.block.ModBlocks;
 import com.benbdev.showcasefabric.block.entity.ModEntityTypes;
 import com.benbdev.showcasefabric.item.ModItems;
+import com.benbdev.showcasefabric.tags.ModTags;
 import com.benbdev.showcasefabric.villager.ModVillagers;
 import net.fabricmc.api.ModInitializer;
 
@@ -41,6 +42,7 @@ public class ShowcaseFabric implements ModInitializer {
         ModItems.registerItemGroups();
         ModBlocks.registerModBlocks();
         ModVillagers.registerVillagers();
+        ModTags.registerTags();
 
         PayloadTypeRegistry.playS2C().register(SummonLightningS2CPayload.ID, SummonLightningS2CPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(AdvanceTimeC2SPayload.ID, AdvanceTimeC2SPayload.CODEC);

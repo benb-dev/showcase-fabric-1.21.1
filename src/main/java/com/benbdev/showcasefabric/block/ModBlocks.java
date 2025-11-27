@@ -1,6 +1,7 @@
 package com.benbdev.showcasefabric.block;
 
 import com.benbdev.showcasefabric.ShowcaseFabric;
+import com.benbdev.showcasefabric.block.custom.ComposterFertilizerBlock;
 import com.benbdev.showcasefabric.block.custom.OnionCropBlock;
 import com.benbdev.showcasefabric.block.custom.TomatoCropBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -50,6 +51,8 @@ public class ModBlocks {
             .sounds(BlockSoundGroup.CROP)
             .pistonBehavior(PistonBehavior.DESTROY)
             .mapColor(MapColor.DARK_GREEN)));
+
+    public static final Block COMPOSTER_FERTILIZER = registerBlock("composter_fertilizer", new ComposterFertilizerBlock(AbstractBlock.Settings.create()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
