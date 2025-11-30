@@ -27,7 +27,7 @@ public class TomatoEntity extends SnowballEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        int i = entity instanceof VillagerEntity ? 10 : 0;
+        int i = entity instanceof VillagerEntity ? 20 : 0;
         entity.damage(this.getDamageSources().thrown(this, this.getOwner()), i);
     }
 }

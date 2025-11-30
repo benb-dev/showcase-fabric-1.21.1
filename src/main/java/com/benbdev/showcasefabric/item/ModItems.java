@@ -44,7 +44,7 @@ public class ModItems {
     public static final Item CHILI_PEPPER_ITEM = registerItem("chili_pepper_item", new Item(new Item.Settings().food(FoodComponents.MELON_SLICE)));
     public static final Item CHILI_PEPPER_SEEDS = registerItem("chili_pepper_seeds", new AliasedBlockItem(ModBlocks.CHILI_CROP, new Item.Settings()));
     public static final Item SALT_ITEM = registerItem("salt_item", new Item(new Item.Settings()));
-    public static final List<Item> SEEDS = List.of(TOMATO_SEEDS,ONION_ITEM, CORIANDER_SEEDS, CUMIN_SEEDS, CHILI_PEPPER_SEEDS);
+    public static final List<Item> SEEDS = List.of(TOMATO_SEEDS,ONION_SEEDS, CORIANDER_SEEDS, CUMIN_SEEDS, CHILI_PEPPER_SEEDS);
 
     public static final Map<Item, Item> SEED_MAP = Map.ofEntries(
             Map.entry(TOMATO_ITEM, TOMATO_SEEDS),
